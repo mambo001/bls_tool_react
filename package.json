@@ -1,20 +1,25 @@
 {
-  "name": "bls_tool_react",
+  "name": "task_tracker_react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
+    "material-icons": "^1.4.1",
+    "materialize-css": "^1.0.0-rc.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.2"
+    "react-shadow": "^19.0.2",
+    "react-shadow-root": "^6.1.0",
+    "rewire": "^5.0.0",
+    "styled-components": "^5.3.1",
+    "use-persisted-state": "^0.3.3",
+    "yarn": "^1.22.11"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "build:extension": "node ./scripts/build-non-split.js && yarn build:clean",
+    "build:clean": "cd build && mv static/js/*.js main.js && mv static/css/*.css main.css && rm -r static",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

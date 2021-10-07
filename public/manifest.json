@@ -1,15 +1,30 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAieWTXiunV6NfFBnO8yapLmxhSm51EEi0rDWrelbfOJPlKDunpE0cacXWOIfU2zSMc9r5qFaWXQ03tleuAovd+4JvzEMeidniGcDkRDd2dt/geekISjJqJd7SOG5Ktol956WbfMF1RJMtFICCHT20RbgkV6yBeGvZzo4+iptSNFp3xDEUKpCd0ek9hoWgXr5kp8xfOcP4z+tZSHhSAaB9rf1Q4fkIBobZ0D0cFWIzU0sSb18aA8TCYW1AYWtgD+XXOcE8yIT8wJFgtgQhcnU4VbZnLs/9e+Ko3mYfZADqrb3C3Ddt7tVpW0WSiLXbtq5c9igA7wp0KpvgsC3wZB9NfwIDAQAB",
+  "name": "BLS2 Tool - React",
+  "version": "0.2",
+  "manifest_version": 2,
+  "description": "Lets you add a scheduled scraper embedded in an app that persists data to browser.",
+  "icons": {"128": "images/icon_128.png"},
+      "permissions": [
+      "activeTab",
+      "storage",
+      "https://script.google.com/a/macros/google.com/s/AKfycbxivFmpPEs3So4NaC3Lk2BN5iE3ahxF4H4eTt8W-v64/"
+    ],
+  "content_scripts": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "matches": ["<all_urls>"],
+      "js": ["./main.js"]
     }
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "browser_action": {
+    "default_popup": "./popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "https://script.google.com/a/macros/google.com/s/AKfycbxivFmpPEs3So4NaC3Lk2BN5iE3ahxF4H4eTt8W-v64/"
+  ],
+  "web_accessible_resources": [
+    "https://fonts.gstatic.com/s/materialicons/*"
+  ]
 }
