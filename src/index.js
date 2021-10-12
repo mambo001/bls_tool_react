@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import BLS2Tool from "./BLS2Tool";
-import { TasksStateContextProvider } from "./contexts/TaskContext";
+import { SuperCheckerContextProvider } from "./contexts/SuperCheckerContext";
 
 const link = document.createElement("link");
 link.href = "https://fonts.googleapis.com/icon?family=Material+Icons";
@@ -14,9 +14,9 @@ rootElement.id = "rootElement"
 
 ReactDOM.render(
   <React.StrictMode>
-    <TasksStateContextProvider>
+    <SuperCheckerContextProvider>
       <BLS2Tool />
-    </TasksStateContextProvider>
+    </SuperCheckerContextProvider>
   </React.StrictMode>,
   rootElement
 );

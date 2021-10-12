@@ -4,12 +4,6 @@
   "version": "0.2",
   "manifest_version": 2,
   "description": "Lets you add a scheduled scraper embedded in an app that persists data to browser.",
-  "icons": {"128": "images/icon_128.png"},
-      "permissions": [
-      "activeTab",
-      "storage",
-      "https://script.google.com/a/macros/google.com/s/AKfycbxivFmpPEs3So4NaC3Lk2BN5iE3ahxF4H4eTt8W-v64/"
-    ],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
