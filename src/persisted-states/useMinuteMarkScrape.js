@@ -1,19 +1,28 @@
 import createPersistedState from "use-persisted-state";
 
 const useMinuteMarkScrapeState = createPersistedState("minuteMarkScrape");
+const useIsSubmittedState = createPersistedState("isSubmitted");
 
 const useMinuteMarkScrape = (initialMinuteMarkArray) => {
-  const [minuteMarkScrape, setMinuteMarkScrape] = useMinuteMarkScrapeState(initialMinuteMarkArray);
+  const [minuteMarkScrape, setMinuteMarkScrape] = useMinuteMarkScrapeState(
+    initialMinuteMarkArray
+  );
+  const [isSubmitted, setIsSubmitted] = useIsSubmittedState(false);
 
   return {
     minuteMarkScrape,
     updateMinuteMarkScrapeHandler: (array) => {
-      setMinuteMarkScrape((currentArray) => [
-        ...currentArray,
-        array,
-      ]);
+      setMinuteMarkScrape(() => array);
     },
-    resetMinuteMarkScrapeHandler: () => setTasks(initialMinuteMarkArray),
+    resetMinuteMarkScrapeHandler: () =>
+      setMinuteMarkScrape(initialMinuteMarkArray),
+    isSubmitted,
+    toggleIsSubmittedHandler: () => {
+      setIsSubmitted(!isSubmitted)
+    },
+    resetIsSubmittedHandler: () => {
+      setIsSubmitted(false)
+    }
   };
 };
 
